@@ -1444,6 +1444,23 @@ body {
 }
 
 
+/* ==========================================================
+   [모바일 이미지 70% 최적화 반응형 최종 완성본]
+   - 슬라이더, 광고배너, 리뷰카드, 팝업창 전부 70% 크기로 정돈
+   - 배경 밖 튀어나감 및 가로 스크롤 100% 차단
+========================================================== */
+@media (max-width: 1024px) {
+  .truth-content-wrap {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
+  .truth-section {
+    min-height: auto !important;
+    margin-bottom: 180px !important;
+  }
+}
+
 @media (max-width: 768px) {
   /* 1. 가로 스크롤 및 화면 밀림 원천 차단 */
   html, body, .stage-market, .stage-truth {
@@ -1454,6 +1471,7 @@ body {
     padding: 0 !important;
     box-sizing: border-box !important;
   }
+
   .stage-inner,
   .truth-grid-container {
     display: block !important;
@@ -1462,71 +1480,82 @@ body {
     padding: 0 16px !important;
     box-sizing: border-box !important;
   }
+
   .stage-market {
     background-size: cover !important;
   }
+
   .stage-truth {
     background-size: cover !important;
     padding: 60px 0 80px !important;
   }
-  /* 2. [⭐️ 50% 축소] 상단 헤더 & 로고 */
+
+  /* 2. [⭐️ 70% 축소] 상단 헤더 & 로고 */
   .market-header {
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
     padding: 16px 0 12px !important;
   }
+
   .logo-wrap {
-    width: 50% !important;
-    max-width: 170px !important; /* PC 340px의 딱 50%! */
+    width: 70% !important;
+    max-width: 200px !important;
     margin: 0 auto !important;
   }
-  /* 3. [⭐️ 50% 축소] 슬라이더 배너 */
+
+  /* 3. [⭐️ 70% 축소] 슬라이더 배너 */
   .slider-section {
     display: block !important;
-    width: 60% !important;
-    max-width: 280px !important;
+    width: 70% !important; /* 슬라이더 70% */
+    max-width: 340px !important;
     margin: 0 auto 20px auto !important;
     box-sizing: border-box !important;
   }
+
   .slider-container {
     width: 100% !important;
     border-width: 2px !important;
     border-radius: 12px !important;
     box-sizing: border-box !important;
   }
+
   .slide-arrow {
-    width: 26px !important;
-    height: 26px !important;
+    width: 28px !important;
+    height: 28px !important;
     font-size: 14px !important;
-    line-height: 24px !important;
+    line-height: 26px !important;
   }
-  /* 4. [⭐️ 50% 축소] 광고 배너 */
+
+  /* 4. [⭐️ 70% 축소] 광고 배너 */
   .ad-section-row {
     display: block !important;
     width: 100% !important;
     margin: 0 0 24px 0 !important;
     box-sizing: border-box !important;
   }
+
   .product-banner-box {
     display: block !important;
-    width: 65% !important; /* 50% 수준으로 축소 */
-    max-width: 260px !important;
+    width: 70% !important; /* 광고 배너 70% */
+    max-width: 320px !important;
     margin: 0 auto 16px auto !important;
     box-sizing: border-box !important;
   }
-  /* 5. [⭐️ 50% 축소] 리뷰 카드들 */
+
+  /* 5. [⭐️ 70% 축소] 리뷰 카드들 */
   .review-stack-left,
   .review-stack-right {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    width: 70% !important; /* 50% 수준으로 축소 */
-    max-width: 260px !important;
+    width: 70% !important; /* 리뷰 스택 70% */
+    max-width: 320px !important;
     min-height: unset !important;
     margin: 0 auto 16px auto !important;
     position: relative !important;
   }
+
   .review-item,
   .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
     position: relative !important;
@@ -1534,11 +1563,12 @@ body {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    max-width: 220px !important; /* 원래 440px의 딱 50%! */
+    max-width: 290px !important;
     margin: 0 auto 10px auto !important;
     box-sizing: border-box !important;
   }
-  /* 스크롤 시에도 50% 아담한 크기 유지 */
+
+  /* 스크롤 시에도 70% 크기 고정 (배경 밖 탈출 완전 차단!) */
   .pop-card.visible,
   .review-item.pop-card.visible,
   .stack-1.pop-card.visible,
@@ -1546,31 +1576,36 @@ body {
   .stack-3.pop-card.visible,
   .stack-4.pop-card.visible,
   .stack-5.pop-card.visible {
-    transform: scale(0.65) !important; /* 원래 크기의 절반 수준으로 축소! */
+    transform: scale(0.7) !important; /* 원래 크기의 딱 70%! */
   }
-  /* 6. [⭐️ 50% 축소] 팝업창 */
+
+  /* 6. [⭐️ 70% 축소] 팝업창 */
   .popup-container {
     overflow: hidden !important;
     width: 100vw !important;
     pointer-events: none;
   }
+
   .popup-window {
     pointer-events: auto !important;
-    width: 55vw !important;        /* 팝업창도 절반 크기로 아담하게! */
-    max-width: 220px !important;
-    left: 22.5vw !important;      /* 화면 정중앙에 배치 */
-    border-radius: 10px !important;
+    width: 70vw !important;        /* 팝업창 70% */
+    max-width: 300px !important;
+    left: 15vw !important;        /* 양옆 15% 남기고 정중앙 배치 */
+    border-radius: 12px !important;
     box-sizing: border-box !important;
   }
+
   .popup-window .popup-img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
   }
+
   .popup-window .popup-titlebar {
-    font-size: 10px !important;
-    padding: 4px 8px !important;
+    font-size: 11px !important;
+    padding: 5px 10px !important;
   }
+
   /* 7. 하단 구매 버튼 */
   .stage1-bottom-cta {
     display: block !important;
@@ -1578,18 +1613,21 @@ body {
     padding: 10px 0 20px !important;
     text-align: center !important;
   }
+
   .forced-buy-btn {
     width: 70% !important;
-    max-width: 280px !important;
+    max-width: 300px !important;
     font-size: 16px !important;
-    padding: 13px 0 !important;
+    padding: 14px 0 !important;
     margin: 0 auto !important;
   }
+
   /* 8. [2단계 진실 화면] */
   .truth-content-wrap {
     display: block !important;
     width: 100% !important;
   }
+
   .truth-section,
   .section-doubt,
   .section-stats,
@@ -1601,21 +1639,25 @@ body {
     padding: 10px 0 !important;
     width: 100% !important;
   }
+
   .section-climax {
     min-height: auto !important;
     margin-bottom: 40px !important;
     width: 100% !important;
   }
+
   .section-title {
     font-size: clamp(22px, 6vw, 28px) !important;
     margin-bottom: 8px !important;
   }
+
   .section-desc {
     font-size: 14px !important;
     margin-bottom: 24px !important;
     word-break: keep-all !important;
     line-height: 1.5 !important;
   }
+
   /* 질문 버튼 */
   .doubt-headline {
     font-size: clamp(20px, 5.5vw, 28px) !important;
@@ -1624,109 +1666,129 @@ body {
     word-break: keep-all !important;
     padding: 0 4% !important;
   }
+
   .doubt-btn-group {
     flex-direction: column !important;
     width: 80% !important;
-    max-width: 300px !important;
+    max-width: 320px !important;
     margin: 0 auto !important;
     gap: 10px !important;
   }
+
   .doubt-choice-btn {
     width: 100% !important;
     padding: 13px 0 !important;
     font-size: 15px !important;
   }
+
   .choice-feedback-box {
     width: 85% !important;
-    max-width: 360px !important;
+    max-width: 380px !important;
     margin: 0 auto !important;
   }
+
   .choice-feedback-box p {
     font-size: 13.5px !important;
     padding: 14px !important;
   }
+
   /* 통계 카드 */
   .stats-vertical-flow {
-    width: 85% !important;
+    width: 88% !important;
     margin: 0 auto !important;
   }
+
   .stat-card {
     flex-direction: column !important;
     text-align: center !important;
     padding: 20px 14px 24px !important;
     gap: 8px !important;
   }
+
   .stat-number {
     font-size: clamp(34px, 10vw, 46px) !important;
     margin-bottom: 4px !important;
   }
+
   .stat-text {
     font-size: 13.5px !important;
     line-height: 1.5 !important;
     word-break: keep-all !important;
   }
+
   /* 막대 그래프 */
   .graph-interactive-wrap {
     width: 90% !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
+
   .graph-bars-area {
     gap: 6px !important;
     height: 200px !important;
     padding: 0 2px 10px !important;
   }
+
   .chart-bar-col {
     min-width: 0 !important;
     flex: 1 !important;
   }
+
   .bar-bottom-label {
     font-size: 11px !important;
     line-height: 1.2 !important;
     word-break: keep-all !important;
   }
+
   .graph-detail-card {
     width: 100% !important;
     padding: 14px !important;
     box-sizing: border-box !important;
   }
+
   /* 4단계 유도 구조 */
   .flow-step-container {
     flex-direction: column !important;
     gap: 8px !important;
-    width: 75% !important;
-    max-width: 250px !important;
+    width: 80% !important;
+    max-width: 260px !important;
     margin: 0 auto !important;
   }
+
   .flow-step-item {
     width: 100% !important;
     min-width: unset !important;
     padding: 10px 14px !important;
     box-sizing: border-box !important;
   }
+
   .flow-arrow-wrap {
     font-size: 15px !important;
     transform: rotate(90deg) !important;
     margin: 1px 0 !important;
   }
+
   /* 마케팅 심리 체험 */
   .experience-grid {
-    width: 85% !important;
+    width: 88% !important;
     margin: 0 auto !important;
     gap: 60px !important;
   }
+
   .rep-interactive-viewer,
   .timer-demo-card {
     width: 100% !important;
     box-sizing: border-box !important;
     padding: 16px 12px !important;
   }
+
   .rep-action-row,
   .timer-btn-row {
     flex-direction: column !important;
     width: 100% !important;
     gap: 8px !important;
   }
+
   .rep-next-step-btn,
   .rep-reset-step-btn,
   .demo-buy-btn,
@@ -1735,37 +1797,45 @@ body {
     min-height: 40px !important;
     padding: 10px 0 !important;
   }
+
   /* 클라이맥스 */
   .climax-typography-wrap {
-    width: 85% !important;
+    width: 88% !important;
     margin: 0 auto 24px !important;
   }
+
   .climax-main-title {
     font-size: clamp(20px, 6vw, 28px) !important;
     line-height: 1.35 !important;
     word-break: keep-all !important;
   }
+
   .climax-punchline {
     font-size: clamp(16px, 5vw, 21px) !important;
     word-break: keep-all !important;
   }
+
   .back-home-wrap {
     margin-top: 24px !important;
   }
+
   .back-to-top-btn {
     width: 80% !important;
-    max-width: 280px !important;
+    max-width: 300px !important;
     font-size: 13px !important;
     padding: 12px 0 !important;
   }
+
   /* 푸터 */
   .footer-content {
     flex-direction: column !important;
     gap: 6px !important;
   }
+
   .footer-divider {
     display: none !important;
   }
+
   .market-footer,
   .truth-footer {
     width: 100% !important;

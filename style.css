@@ -1521,7 +1521,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    width: 60% !important; /* 50% 수준으로 축소 */
+    width: 70% !important; /* 50% 수준으로 축소 */
     max-width: 260px !important;
     min-height: unset !important;
     margin: 0 auto 16px auto !important;

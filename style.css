@@ -1443,10 +1443,13 @@ body {
   }
 }
 
+
+
+
 /* ==========================================================
-   [모바일 100% 핏 완벽 해결본]
-   - 오른쪽 파란 배경 노출 100% 차단
-   - 가로 스크롤바 완전 박멸 & 화면 100% 꽉 채움
+   [모바일 90% 최적화 반응형 최종본]
+   - 팝업창, 리뷰카드, 광고 배너 90% 가변 정렬
+   - 오른쪽 배경 밀림 및 가로 스크롤 100% 차단
 ========================================================== */
 @media (max-width: 1024px) {
   .truth-content-wrap {
@@ -1471,7 +1474,6 @@ body {
     box-sizing: border-box !important;
   }
 
-  /* 2. [핵심] 8칸 그리드를 풀고 100% 블록으로 전환 */
   .stage-inner,
   .truth-grid-container {
     display: block !important;
@@ -1490,7 +1492,7 @@ body {
     padding: 60px 0 80px !important;
   }
 
-  /* 3. 상단 헤더 & 로고 100% */
+  /* 2. 상단 헤더 & 로고 */
   .market-header {
     display: flex !important;
     justify-content: center !important;
@@ -1499,16 +1501,17 @@ body {
   }
 
   .logo-wrap {
-    width: 100% !important;
+    width: 90% !important;
     max-width: 240px !important;
+    margin: 0 auto !important;
   }
 
-  /* 4. [슬라이더 100% 꽉 채우기 - 오른쪽 빈 공간 소멸!] */
+  /* 3. 슬라이더 배너 (90%) */
   .slider-section {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 24px 0 !important;
+    width: 90% !important; /* 슬라이더 90% */
+    max-width: 440px !important;
+    margin: 0 auto 24px auto !important;
     box-sizing: border-box !important;
   }
 
@@ -1526,56 +1529,56 @@ body {
     line-height: 30px !important;
   }
 
-  /* 5. [핵심] 화면을 오른쪽으로 밀어내던 카드들을 100% 화면 안으로 가두기 */
+  /* 4. [⭐️ 핵심 요청] 광고 배너 (90%) */
   .ad-section-row {
     display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
     margin: 0 0 30px 0 !important;
     box-sizing: border-box !important;
   }
 
   .product-banner-box {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 20px 0 !important;
+    width: 90% !important; /* 광고 배너 90% */
+    max-width: 400px !important;
+    margin: 0 auto 20px auto !important;
     box-sizing: border-box !important;
   }
 
+  /* 5. [⭐️ 핵심 요청] 리뷰 카드들 (90%) */
   .review-stack-left,
   .review-stack-right {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 90% !important; /* 리뷰 스택 90% */
+    max-width: 400px !important;
     min-height: unset !important;
     position: static !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 auto 20px auto !important;
   }
 
-  /* 440px 절대위치를 풀고 화면 너비 100%에 맞춰 중앙 정렬 */
   .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
     position: relative !important;
     top: unset !important;
     left: unset !important;
     right: unset !important;
-    width: 100% !important;
+    width: 100% !important; /* 부모 90% 안에서 꽉 참 */
     max-width: 100% !important;
     margin: 0 auto 16px auto !important;
     transform: none !important;
     box-sizing: border-box !important;
   }
 
-  /* 6. 팝업창 방어 */
+  /* 6. [⭐️ 핵심 요청] 팝업창 (90%) */
   .popup-container {
     overflow: hidden !important;
     width: 100vw !important;
     pointer-events: none;
   }
+
   .custom-popup-window {
     pointer-events: auto;
-    width: 80vw !important;
-    max-width: 320px !important;
+    width: 90vw !important; /* 팝업창 90% */
+    max-width: 340px !important;
     border-radius: 12px !important;
   }
 
@@ -1588,14 +1591,14 @@ body {
   }
 
   .forced-buy-btn {
-    width: 100% !important;
+    width: 90% !important;
     max-width: 340px !important;
     font-size: 17px !important;
     padding: 15px 0 !important;
     margin: 0 auto !important;
   }
 
-  /* 8. [2단계 진실 화면] 여백 및 100% 레이아웃 */
+  /* 8. [2단계 진실 화면] */
   .truth-content-wrap {
     display: block !important;
     width: 100% !important;
@@ -1631,17 +1634,18 @@ body {
     line-height: 1.5 !important;
   }
 
-  /* 질문 버튼 세로 정렬 */
+  /* 질문 버튼 */
   .doubt-headline {
     font-size: clamp(20px, 5.5vw, 28px) !important;
     line-height: 1.45 !important;
     margin-bottom: 24px !important;
     word-break: keep-all !important;
+    padding: 0 4% !important;
   }
 
   .doubt-btn-group {
     flex-direction: column !important;
-    width: 100% !important;
+    width: 90% !important;
     max-width: 340px !important;
     margin: 0 auto !important;
     gap: 10px !important;
@@ -1654,7 +1658,7 @@ body {
   }
 
   .choice-feedback-box {
-    width: 100% !important;
+    width: 90% !important;
     max-width: 400px !important;
     margin: 0 auto !important;
   }
@@ -1666,7 +1670,7 @@ body {
 
   /* 통계 카드 */
   .stats-vertical-flow {
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 auto !important;
   }
 
@@ -1690,7 +1694,7 @@ body {
 
   /* 막대 그래프 */
   .graph-interactive-wrap {
-    width: 100% !important;
+    width: 92% !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
@@ -1718,11 +1722,11 @@ body {
     box-sizing: border-box !important;
   }
 
-  /* 4단계 유도 구조 (가로 -> 세로 1열 및 아래 화살표 ↓) */
+  /* 4단계 유도 구조 */
   .flow-step-container {
     flex-direction: column !important;
     gap: 8px !important;
-    width: 100% !important;
+    width: 85% !important;
     max-width: 280px !important;
     margin: 0 auto !important;
   }
@@ -1742,7 +1746,7 @@ body {
 
   /* 마케팅 심리 체험 */
   .experience-grid {
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 auto !important;
     gap: 60px !important;
   }
@@ -1772,7 +1776,7 @@ body {
 
   /* 클라이맥스 */
   .climax-typography-wrap {
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 auto 24px !important;
   }
 
@@ -1792,13 +1796,13 @@ body {
   }
 
   .back-to-top-btn {
-    width: 100% !important;
+    width: 90% !important;
     max-width: 320px !important;
     font-size: 13.5px !important;
     padding: 12px 0 !important;
   }
 
-  /* 9. 푸터 */
+  /* 푸터 */
   .footer-content {
     flex-direction: column !important;
     gap: 6px !important;

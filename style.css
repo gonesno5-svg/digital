@@ -1443,5 +1443,361 @@ body {
   }
 }
 
+/* ==========================================================
+   [RESPONSIVE DESIGN : 태블릿 및 모바일 완벽 최적화]
+   - 기존 PC 디자인은 100% 보존
+   - 1024px 이하 태블릿 및 768px 이하 모바일 화면 최적화
+========================================================== */
+@media (max-width: 1024px) {
+  .truth-content-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .truth-section {
+    min-height: auto;
+    margin-bottom: 220px;
+  }
+}
 
+@media (max-width: 768px) {
+  /* 1. 기본 레이아웃 & 배경 */
+  .stage-inner,
+  .truth-grid-container {
+    padding: 0 16px;
+  }
+
+  .stage-market {
+    background-size: cover;
+  }
+
+  .stage-truth {
+    background-size: cover;
+    padding: 80px 0 100px;
+  }
+
+  /* 2. 섹션 간의 스크롤 여백 대폭 축소 (모바일 스크롤 최적화) */
+  .truth-section {
+    min-height: auto;
+    margin-bottom: 130px;
+    padding: 24px 0;
+  }
+
+  .section-doubt,
+  .section-stats,
+  .section-graph,
+  .section-flow,
+  .section-experience {
+    min-height: auto;
+    margin-bottom: 130px;
+  }
+
+  .section-climax {
+    min-height: auto;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: clamp(23px, 6vw, 30px);
+    margin-bottom: 10px;
+  }
+
+  .section-desc {
+    font-size: 14px;
+    margin-bottom: 28px;
+    word-break: keep-all;
+    line-height: 1.5;
+  }
+
+  /* 3. 스테이지 1 (마켓) */
+  .market-header {
+    padding: 24px 0 16px;
+    margin-bottom: 20px;
+  }
+
+  .logo-wrap {
+    max-width: 220px;
+  }
+
+  .slider-section {
+    margin-bottom: 30px;
+  }
+
+  .slider-container {
+    border-width: 2px;
+    border-radius: 14px;
+  }
+
+  .slide-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  .slide-arrow.prev { left: 8px; }
+  .slide-arrow.next { right: 8px; }
+
+  .ad-section-row {
+    margin-bottom: 30px;
+  }
+
+  .pop-card {
+    max-width: 94vw;
+    box-sizing: border-box;
+  }
+
+  /* 모바일에서 카드 회전각도 완화하여 가로 삐져나옴 방지 */
+  .stack-1.pop-card.visible { transform: scale(1) rotate(-1deg); }
+  .stack-2.pop-card.visible { transform: scale(1) rotate(1deg); }
+  .stack-3.pop-card.visible { transform: scale(1) rotate(-1.5deg); }
+  .stack-4.pop-card.visible { transform: scale(1) rotate(1deg); }
+  .stack-5.pop-card.visible { transform: scale(1) rotate(-1deg); }
+
+  .custom-popup-window {
+    max-width: 82vw !important;
+    border-radius: 10px !important;
+  }
+
+  .stage1-bottom-cta {
+    padding: 20px 0 20px;
+  }
+
+  .forced-buy-btn {
+    width: 90%;
+    max-width: 320px;
+    font-size: 18px;
+    padding: 16px 20px;
+  }
+
+  /* 4. 스테이지 2 - 질문 버튼 세로 배치 */
+  .doubt-headline {
+    font-size: clamp(21px, 5.5vw, 30px);
+    line-height: 1.45;
+    margin-bottom: 28px;
+    word-break: keep-all;
+  }
+
+  .doubt-btn-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .doubt-choice-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .choice-feedback-box p {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  /* 5. 스테이지 2 - 통계 카드 */
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 14px 28px;
+    gap: 10px;
+  }
+
+  .stat-number {
+    font-size: clamp(38px, 12vw, 54px);
+    margin-bottom: 4px;
+  }
+
+  .stat-source {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .stat-text {
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  /* 6. 스테이지 2 - 막대 그래프 */
+  .graph-interactive-wrap {
+    padding: 0;
+  }
+
+  .graph-bars-area {
+    gap: 6px;
+    height: 240px;
+    padding: 0 4px 10px;
+  }
+
+  .chart-bar-col {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .bar-top-val {
+    font-size: 11px;
+  }
+
+  .bar-bottom-label {
+    font-size: 11px;
+    white-space: normal;
+    line-height: 1.2;
+    word-break: keep-all;
+  }
+
+  .graph-detail-card {
+    padding: 16px 14px;
+  }
+
+  .graph-detail-highlight {
+    font-size: 32px;
+  }
+
+  .graph-detail-sub {
+    font-size: 13px;
+  }
+
+  .graph-detail-note {
+    font-size: 12px;
+  }
+
+  /* 7. 스테이지 2 - 4단계 유도 구조 (가로 -> 세로 1열 전환) */
+  .flow-step-container {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .flow-step-item {
+    width: 100%;
+    min-width: unset;
+    min-height: 58px;
+    padding: 10px 16px;
+  }
+
+  .flow-arrow-wrap {
+    font-size: 16px;
+    transform: rotate(90deg); /* 가로 화살표 → 를 아래 화살표 ↓ 로 회전 */
+    margin: 2px 0;
+  }
+
+  /* 8. 스테이지 2 - 마케팅 심리 체험 */
+  .experience-grid {
+    gap: 70px;
+  }
+
+  .exp-heading {
+    font-size: 22px;
+  }
+
+  .exp-lead {
+    font-size: 15px;
+  }
+
+  .exp-desc {
+    font-size: 13px;
+  }
+
+  .rep-bubble-wrap {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .rep-dynamic-card {
+    padding: 12px 14px;
+  }
+
+  .rep-dynamic-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .rep-action-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rep-next-step-btn,
+  .rep-reset-step-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  .timer-demo-card {
+    padding: 20px 14px;
+  }
+
+  .timer-clock {
+    font-size: 36px;
+  }
+
+  .timer-btn-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .demo-buy-btn,
+  .demo-reset-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  /* 9. 스테이지 2 - 클라이맥스 */
+  .climax-typography-wrap {
+    margin-bottom: 30px;
+  }
+
+  .climax-eyebrow {
+    font-size: 16px;
+  }
+
+  .climax-main-title {
+    font-size: clamp(23px, 6.5vw, 34px);
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+
+  .climax-punchline {
+    font-size: clamp(18px, 5vw, 24px);
+    word-break: keep-all;
+    line-height: 1.5;
+  }
+
+  .back-home-wrap {
+    margin-top: 30px;
+  }
+
+  .back-to-top-btn {
+    width: 90%;
+    max-width: 320px;
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  /* 10. 푸터 */
+  .footer-content {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+
+  .market-footer {
+    padding: 30px 16px 40px;
+  }
+
+  .truth-footer {
+    margin: 40px auto 0;
+    padding: 30px 16px 20px;
+  }
+}
 

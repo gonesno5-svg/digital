@@ -1532,7 +1532,7 @@ body {
   /* 4. [⭐️ 핵심 요청] 광고 배너 (90%) */
   .ad-section-row {
     display: block !important;
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 0 30px 0 !important;
     box-sizing: border-box !important;
   }
@@ -1549,8 +1549,8 @@ body {
   .review-stack-left,
   .review-stack-right {
     display: block !important;
-    width: 90% !important; /* 리뷰 스택 90% */
-    max-width: 400px !important;
+    width: 80% !important; /* 리뷰 스택 90% */
+    max-width: 360px !important;
     min-height: unset !important;
     position: static !important;
     margin: 0 auto 20px auto !important;
@@ -1571,7 +1571,7 @@ body {
   /* 6. [⭐️ 핵심 요청] 팝업창 (90%) */
   .popup-container {
     overflow: hidden !important;
-    width: 100vw !important;
+    width: 90% !important;
     pointer-events: none;
   }
 

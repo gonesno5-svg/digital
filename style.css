@@ -1571,7 +1571,7 @@ body {
   /* 6. [⭐️ 핵심 요청] 팝업창 (90%) */
   .popup-container {
     overflow: hidden !important;
-    width: 90% !important;
+    width: 80% !important;
     pointer-events: none;
   }
 

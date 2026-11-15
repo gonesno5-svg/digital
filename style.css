@@ -1445,9 +1445,7 @@ body {
 
 
 /* ==========================================================
-   [모바일 이미지 70% 최적화 반응형 최종 완성본]
-   - 슬라이더, 광고배너, 리뷰카드, 팝업창 전부 70% 크기로 정돈
-   - 배경 밖 튀어나감 및 가로 스크롤 100% 차단
+   [모바일 핏 최적화 : 팝업 70% 유지 + 본문/리뷰 90% 확대]
 ========================================================== */
 @media (max-width: 1024px) {
   .truth-content-wrap {
@@ -1490,69 +1488,69 @@ body {
     padding: 60px 0 80px !important;
   }
 
-  /* 2. [⭐️ 70% 축소] 상단 헤더 & 로고 */
+  /* 2. 상단 헤더 & 로고 */
   .market-header {
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
-    padding: 16px 0 12px !important;
+    padding: 16px 0 14px !important;
   }
 
   .logo-wrap {
-    width: 70% !important;
-    max-width: 200px !important;
+    width: 80% !important;
+    max-width: 220px !important;
     margin: 0 auto !important;
   }
 
-  /* 3. [⭐️ 70% 축소] 슬라이더 배너 */
+  /* 3. 슬라이더 배너 (시원한 90%) */
   .slider-section {
     display: block !important;
-    width: 70% !important; /* 슬라이더 70% */
-    max-width: 340px !important;
-    margin: 0 auto 20px auto !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    margin: 0 auto 24px auto !important;
     box-sizing: border-box !important;
   }
 
   .slider-container {
     width: 100% !important;
     border-width: 2px !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     box-sizing: border-box !important;
   }
 
   .slide-arrow {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 14px !important;
-    line-height: 26px !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 15px !important;
+    line-height: 28px !important;
   }
 
-  /* 4. [⭐️ 70% 축소] 광고 배너 */
+  /* 4. [⭐️ 큼직하고 시원하게 90%] 광고 배너 */
   .ad-section-row {
     display: block !important;
     width: 100% !important;
-    margin: 0 0 24px 0 !important;
+    margin: 0 0 28px 0 !important;
     box-sizing: border-box !important;
   }
 
   .product-banner-box {
     display: block !important;
-    width: 70% !important; /* 광고 배너 70% */
-    max-width: 320px !important;
-    margin: 0 auto 16px auto !important;
+    width: 90% !important; /* 70% -> 90%로 시원하게 확대! */
+    max-width: 380px !important;
+    margin: 0 auto 20px auto !important;
     box-sizing: border-box !important;
   }
 
-  /* 5. [⭐️ 70% 축소] 리뷰 카드들 */
+  /* 5. [⭐️ 글씨 잘 보이게 90%] 리뷰 카드들 */
   .review-stack-left,
   .review-stack-right {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    width: 70% !important; /* 리뷰 스택 70% */
-    max-width: 320px !important;
+    width: 90% !important; /* 70% -> 90%로 시원하게 확대! */
+    max-width: 380px !important;
     min-height: unset !important;
-    margin: 0 auto 16px auto !important;
+    margin: 0 auto 20px auto !important;
     position: relative !important;
   }
 
@@ -1563,12 +1561,12 @@ body {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    max-width: 290px !important;
-    margin: 0 auto 10px auto !important;
+    max-width: 340px !important;
+    margin: 0 auto 12px auto !important;
     box-sizing: border-box !important;
   }
 
-  /* 스크롤 시에도 70% 크기 고정 (배경 밖 탈출 완전 차단!) */
+  /* 배경 밖으로 탈출하지 않으면서 글씨가 시원하게 읽히는 scale(0.88) */
   .pop-card.visible,
   .review-item.pop-card.visible,
   .stack-1.pop-card.visible,
@@ -1576,10 +1574,10 @@ body {
   .stack-3.pop-card.visible,
   .stack-4.pop-card.visible,
   .stack-5.pop-card.visible {
-    transform: scale(0.7) !important; /* 원래 크기의 딱 70%! */
+    transform: scale(0.88) !important;
   }
 
-  /* 6. [⭐️ 70% 축소] 팝업창 */
+  /* 6. [⭐️ 딱 좋다고 하신 팝업창 70% 그대로 유지!] */
   .popup-container {
     overflow: hidden !important;
     width: 100vw !important;
@@ -1588,9 +1586,9 @@ body {
 
   .popup-window {
     pointer-events: auto !important;
-    width: 70vw !important;        /* 팝업창 70% */
+    width: 70vw !important;        /* 마음에 들어하신 70% 크기 유지! */
     max-width: 300px !important;
-    left: 15vw !important;        /* 양옆 15% 남기고 정중앙 배치 */
+    left: 15vw !important;        /* 양옆 15% 정중앙 배치 */
     border-radius: 12px !important;
     box-sizing: border-box !important;
   }

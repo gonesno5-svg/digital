@@ -1443,37 +1443,45 @@ body {
   }
 }
 
-
 /* ==========================================================
-   [RESPONSIVE DESIGN : 태블릿 및 모바일 완벽 반응형 최종 완성본]
-   - 가로 스크롤바 및 상자 튀어나옴 100% 원천 차단
-   - 데스크톱 화면은 100% 보존
+   [100% 풀 와이드 완벽 반응형 최종본]
+   - 8칸 그리드 해제 -> 100% 화면 가득 채움
+   - 왼쪽 쏠림 & 오른쪽 빈 공간 100% 해결
 ========================================================== */
-
-/* 태블릿 (1024px 이하) */
 @media (max-width: 1024px) {
   .truth-content-wrap {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
   }
   .truth-section {
-    min-height: auto;
-    margin-bottom: 200px;
+    min-height: auto !important;
+    margin-bottom: 180px !important;
   }
 }
 
-/* 스마트폰 & 모바일 (768px 이하) */
 @media (max-width: 768px) {
-  /* 1. 가로 스크롤바 및 여백 튀어나옴 원천 차단 */
-  html, body, .stage-market, .stage-truth, .stage-inner {
+  /* 1. 8칸 그리드 해제 & 100% 꽉 채우기 */
+  html, body, .stage-market, .stage-truth {
     overflow-x: hidden !important;
+    width: 100% !important;
     max-width: 100vw !important;
     box-sizing: border-box !important;
   }
 
   .stage-inner,
   .truth-grid-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
     padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .truth-content-wrap {
+    width: 100% !important;
+    grid-column: unset !important;
   }
 
   .stage-market {
@@ -1485,7 +1493,7 @@ body {
     padding: 60px 0 80px !important;
   }
 
-  /* 2. 섹션 간 스크롤 여백 대폭 축소 (모바일 최적화) */
+  /* 2. 섹션 간격 모바일 스크롤 축소 */
   .truth-section,
   .section-doubt,
   .section-stats,
@@ -1493,18 +1501,20 @@ body {
   .section-flow,
   .section-experience {
     min-height: auto !important;
-    margin-bottom: 120px !important;
-    padding: 20px 0 !important;
+    margin-bottom: 100px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
   }
 
   .section-climax {
     min-height: auto !important;
     margin-bottom: 40px !important;
+    width: 100% !important;
   }
 
   .section-title {
     font-size: clamp(22px, 6vw, 28px) !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
   }
 
   .section-desc {
@@ -1514,45 +1524,51 @@ body {
     line-height: 1.5 !important;
   }
 
-  /* 3. [중요] 첫 화면 가로 3열 배너를 모바일용 세로 1열로 정렬 (옆으로 상자 튀어나옴 해결!) */
+  /* 3. [1단계 마켓] 100% 화면 가득 채우기 (왼쪽 쏠림 해결!) */
   .ad-section-row {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 24px !important;
+    width: 100% !important;
+    grid-column: unset !important;
+    gap: 20px !important;
     margin-bottom: 30px !important;
   }
 
   .product-banner-box {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 360px !important;
     margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
   .review-stack-left,
   .review-stack-right {
     flex: unset !important;
     width: 100% !important;
-    max-width: 320px !important;
-    min-height: 260px !important;
+    max-width: 360px !important;
+    min-height: 250px !important;
     margin: 0 auto !important;
+    position: relative !important;
   }
 
-  /* [중요] 440px 고정 너비로 삐져나오던 카드들을 화면 안쪽으로 중앙 정렬 */
+  /* 카드들이 삐져나오지 않고 화면 100% 안쪽으로 중앙 정렬 */
   .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 340px !important;
     left: 0 !important;
     right: 0 !important;
     margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
   .stack-1 { top: 0px !important; }
-  .stack-2 { top: 70px !important; }
-  .stack-3 { top: 130px !important; }
+  .stack-2 { top: 60px !important; }
+  .stack-3 { top: 120px !important; }
   .stack-4 { top: 0px !important; }
-  .stack-5 { top: 80px !important; }
+  .stack-5 { top: 70px !important; }
 
-  /* [중요] 스크롤 무작위 팝업창이 화면 밖으로 넘치지 않게 방어 */
+  /* 팝업창 방어 */
   .popup-container {
     overflow: hidden !important;
     width: 100vw !important;
@@ -1560,22 +1576,16 @@ body {
   }
   .custom-popup-window {
     pointer-events: auto;
-    max-width: 75vw !important;
-    border-radius: 10px !important;
+    width: 80vw !important;
+    max-width: 320px !important;
+    border-radius: 12px !important;
   }
 
-  /* 4. 상단 슬라이더 & 로고 */
-  .market-header {
-    padding: 20px 0 14px !important;
-    margin-bottom: 16px !important;
-  }
-
-  .logo-wrap {
-    max-width: 200px !important;
-  }
-
+  /* 슬라이더 */
   .slider-section {
-    margin-bottom: 24px !important;
+    width: 100% !important;
+    grid-column: unset !important;
+    margin: 0 auto 20px !important;
   }
 
   .slider-container {
@@ -1584,28 +1594,30 @@ body {
   }
 
   .slide-arrow {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 18px !important;
-    line-height: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    line-height: 30px !important;
   }
 
   .slide-arrow.prev { left: 6px !important; }
   .slide-arrow.next { right: 6px !important; }
 
-  /* 5. 하단 구매 버튼 */
+  /* 하단 구매 버튼 */
   .stage1-bottom-cta {
+    width: 100% !important;
+    grid-column: unset !important;
     padding: 10px 0 20px !important;
   }
 
   .forced-buy-btn {
-    width: 90% !important;
-    max-width: 300px !important;
+    width: 100% !important;
+    max-width: 340px !important;
     font-size: 17px !important;
-    padding: 15px 20px !important;
+    padding: 15px 0 !important;
   }
 
-  /* 6. 스테이지 2 - 질문 버튼 세로 배치 */
+  /* 4. [2단계 진실] 질문 버튼 */
   .doubt-headline {
     font-size: clamp(20px, 5.5vw, 28px) !important;
     line-height: 1.45 !important;
@@ -1616,15 +1628,21 @@ body {
   .doubt-btn-group {
     flex-direction: column !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 340px !important;
     margin: 0 auto !important;
     gap: 10px !important;
   }
 
   .doubt-choice-btn {
     width: 100% !important;
-    padding: 14px 20px !important;
+    padding: 14px 0 !important;
     font-size: 15px !important;
+  }
+
+  .choice-feedback-box {
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
   }
 
   .choice-feedback-box p {
@@ -1632,11 +1650,16 @@ body {
     padding: 14px !important;
   }
 
-  /* 7. 스테이지 2 - 통계 카드 */
+  /* 5. 통계 카드 */
+  .stats-vertical-flow {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
   .stat-card {
     flex-direction: column !important;
     text-align: center !important;
-    padding: 20px 12px 24px !important;
+    padding: 20px 14px 24px !important;
     gap: 8px !important;
   }
 
@@ -1645,18 +1668,16 @@ body {
     margin-bottom: 4px !important;
   }
 
-  .stat-source {
-    font-size: 11px !important;
-  }
-
   .stat-text {
     font-size: 14px !important;
     line-height: 1.5 !important;
     word-break: keep-all !important;
   }
 
-  /* 8. 스테이지 2 - 막대 그래프 모바일 최적화 */
+  /* 6. 막대 그래프 */
   .graph-interactive-wrap {
+    width: 100% !important;
+    margin: 0 auto !important;
     padding: 0 !important;
   }
 
@@ -1671,31 +1692,112 @@ body {
     flex: 1 !important;
   }
 
-  .bar-top-val {
-    font-size: 11px !important;
-  }
-
   .bar-bottom-label {
-    font-size: 10.5px !important;
-    white-space: normal !important;
+    font-size: 11px !important;
     line-height: 1.2 !important;
     word-break: keep-all !important;
   }
 
   .graph-detail-card {
-    padding: 14px 12px !important;
+    width: 100% !important;
+    padding: 14px !important;
+    box-sizing: border-box !important;
   }
 
-  .graph-detail-highlight {
-    font-size: 28px !important;
+  /* 7. [4단계 유도 구조] 세로 1열 정렬 */
+  .flow-step-container {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
   }
 
-  .graph-detail-sub {
-    font-size: 12.5px !important;
+  .flow-step-item {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 10px 14px !important;
+    box-sizing: border-box !important;
   }
 
-  .graph-detail-note {
-    font-size: 11.5px !important;
+  .flow-arrow-wrap {
+    font-size: 15px !important;
+    transform: rotate(90deg) !important;
+    margin: 1px 0 !important;
   }
 
-  /* 9. [중요] 4단계 유
+  /* 8. 마케팅 심리 체험 */
+  .experience-grid {
+    width: 100% !important;
+    margin: 0 auto !important;
+    gap: 60px !important;
+  }
+
+  .rep-interactive-viewer,
+  .timer-demo-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 16px 12px !important;
+  }
+
+  .rep-action-row,
+  .timer-btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .rep-next-step-btn,
+  .rep-reset-step-btn,
+  .demo-buy-btn,
+  .demo-reset-btn {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 11px 0 !important;
+  }
+
+  /* 9. 클라이맥스 */
+  .climax-typography-wrap {
+    width: 100% !important;
+    margin: 0 auto 24px !important;
+  }
+
+  .climax-main-title {
+    font-size: clamp(21px, 6.5vw, 30px) !important;
+    line-height: 1.35 !important;
+    word-break: keep-all !important;
+  }
+
+  .climax-punchline {
+    font-size: clamp(17px, 5vw, 22px) !important;
+    word-break: keep-all !important;
+  }
+
+  .back-home-wrap {
+    margin-top: 24px !important;
+  }
+
+  .back-to-top-btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    font-size: 13.5px !important;
+    padding: 12px 0 !important;
+  }
+
+  /* 10. 푸터 */
+  .footer-content {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .footer-divider {
+    display: none !important;
+  }
+
+  .market-footer,
+  .truth-footer {
+    width: 100% !important;
+    padding: 24px 16px 30px !important;
+    box-sizing: border-box !important;
+  }
+}

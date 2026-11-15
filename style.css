@@ -1444,9 +1444,9 @@ body {
 }
 
 /* ==========================================================
-   [100% 풀 와이드 완벽 반응형 최종본]
-   - 8칸 그리드 해제 -> 100% 화면 가득 채움
-   - 왼쪽 쏠림 & 오른쪽 빈 공간 100% 해결
+   [모바일 100% 핏 완벽 해결본]
+   - 오른쪽 파란 배경 노출 100% 차단
+   - 가로 스크롤바 완전 박멸 & 화면 100% 꽉 채움
 ========================================================== */
 @media (max-width: 1024px) {
   .truth-content-wrap {
@@ -1461,27 +1461,24 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* 1. 8칸 그리드 해제 & 100% 꽉 채우기 */
+  /* 1. 가로 스크롤 및 화면 밀림 원천 차단 */
   html, body, .stage-market, .stage-truth {
     overflow-x: hidden !important;
-    width: 100% !important;
+    width: 100vw !important;
     max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
 
+  /* 2. [핵심] 8칸 그리드를 풀고 100% 블록으로 전환 */
   .stage-inner,
   .truth-grid-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+    display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
     padding: 0 16px !important;
     box-sizing: border-box !important;
-  }
-
-  .truth-content-wrap {
-    width: 100% !important;
-    grid-column: unset !important;
   }
 
   .stage-market {
@@ -1493,7 +1490,117 @@ body {
     padding: 60px 0 80px !important;
   }
 
-  /* 2. 섹션 간격 모바일 스크롤 축소 */
+  /* 3. 상단 헤더 & 로고 100% */
+  .market-header {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 20px 0 16px !important;
+  }
+
+  .logo-wrap {
+    width: 100% !important;
+    max-width: 240px !important;
+  }
+
+  /* 4. [슬라이더 100% 꽉 채우기 - 오른쪽 빈 공간 소멸!] */
+  .slider-section {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 24px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .slider-container {
+    width: 100% !important;
+    border-width: 2px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .slide-arrow {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    line-height: 30px !important;
+  }
+
+  /* 5. [핵심] 화면을 오른쪽으로 밀어내던 카드들을 100% 화면 안으로 가두기 */
+  .ad-section-row {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 30px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-banner-box {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .review-stack-left,
+  .review-stack-right {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: unset !important;
+    position: static !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  /* 440px 절대위치를 풀고 화면 너비 100%에 맞춰 중앙 정렬 */
+  .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px auto !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 6. 팝업창 방어 */
+  .popup-container {
+    overflow: hidden !important;
+    width: 100vw !important;
+    pointer-events: none;
+  }
+  .custom-popup-window {
+    pointer-events: auto;
+    width: 80vw !important;
+    max-width: 320px !important;
+    border-radius: 12px !important;
+  }
+
+  /* 7. 하단 구매 버튼 */
+  .stage1-bottom-cta {
+    display: block !important;
+    width: 100% !important;
+    padding: 10px 0 20px !important;
+    text-align: center !important;
+  }
+
+  .forced-buy-btn {
+    width: 100% !important;
+    max-width: 340px !important;
+    font-size: 17px !important;
+    padding: 15px 0 !important;
+    margin: 0 auto !important;
+  }
+
+  /* 8. [2단계 진실 화면] 여백 및 100% 레이아웃 */
+  .truth-content-wrap {
+    display: block !important;
+    width: 100% !important;
+  }
+
   .truth-section,
   .section-doubt,
   .section-stats,
@@ -1524,100 +1631,7 @@ body {
     line-height: 1.5 !important;
   }
 
-  /* 3. [1단계 마켓] 100% 화면 가득 채우기 (왼쪽 쏠림 해결!) */
-  .ad-section-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    grid-column: unset !important;
-    gap: 20px !important;
-    margin-bottom: 30px !important;
-  }
-
-  .product-banner-box {
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .review-stack-left,
-  .review-stack-right {
-    flex: unset !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    min-height: 250px !important;
-    margin: 0 auto !important;
-    position: relative !important;
-  }
-
-  /* 카드들이 삐져나오지 않고 화면 100% 안쪽으로 중앙 정렬 */
-  .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
-    width: 100% !important;
-    max-width: 340px !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .stack-1 { top: 0px !important; }
-  .stack-2 { top: 60px !important; }
-  .stack-3 { top: 120px !important; }
-  .stack-4 { top: 0px !important; }
-  .stack-5 { top: 70px !important; }
-
-  /* 팝업창 방어 */
-  .popup-container {
-    overflow: hidden !important;
-    width: 100vw !important;
-    pointer-events: none;
-  }
-  .custom-popup-window {
-    pointer-events: auto;
-    width: 80vw !important;
-    max-width: 320px !important;
-    border-radius: 12px !important;
-  }
-
-  /* 슬라이더 */
-  .slider-section {
-    width: 100% !important;
-    grid-column: unset !important;
-    margin: 0 auto 20px !important;
-  }
-
-  .slider-container {
-    border-width: 2px !important;
-    border-radius: 12px !important;
-  }
-
-  .slide-arrow {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 16px !important;
-    line-height: 30px !important;
-  }
-
-  .slide-arrow.prev { left: 6px !important; }
-  .slide-arrow.next { right: 6px !important; }
-
-  /* 하단 구매 버튼 */
-  .stage1-bottom-cta {
-    width: 100% !important;
-    grid-column: unset !important;
-    padding: 10px 0 20px !important;
-  }
-
-  .forced-buy-btn {
-    width: 100% !important;
-    max-width: 340px !important;
-    font-size: 17px !important;
-    padding: 15px 0 !important;
-  }
-
-  /* 4. [2단계 진실] 질문 버튼 */
+  /* 질문 버튼 세로 정렬 */
   .doubt-headline {
     font-size: clamp(20px, 5.5vw, 28px) !important;
     line-height: 1.45 !important;
@@ -1650,7 +1664,7 @@ body {
     padding: 14px !important;
   }
 
-  /* 5. 통계 카드 */
+  /* 통계 카드 */
   .stats-vertical-flow {
     width: 100% !important;
     margin: 0 auto !important;
@@ -1674,7 +1688,7 @@ body {
     word-break: keep-all !important;
   }
 
-  /* 6. 막대 그래프 */
+  /* 막대 그래프 */
   .graph-interactive-wrap {
     width: 100% !important;
     margin: 0 auto !important;
@@ -1704,7 +1718,7 @@ body {
     box-sizing: border-box !important;
   }
 
-  /* 7. [4단계 유도 구조] 세로 1열 정렬 */
+  /* 4단계 유도 구조 (가로 -> 세로 1열 및 아래 화살표 ↓) */
   .flow-step-container {
     flex-direction: column !important;
     gap: 8px !important;
@@ -1726,7 +1740,7 @@ body {
     margin: 1px 0 !important;
   }
 
-  /* 8. 마케팅 심리 체험 */
+  /* 마케팅 심리 체험 */
   .experience-grid {
     width: 100% !important;
     margin: 0 auto !important;
@@ -1756,7 +1770,7 @@ body {
     padding: 11px 0 !important;
   }
 
-  /* 9. 클라이맥스 */
+  /* 클라이맥스 */
   .climax-typography-wrap {
     width: 100% !important;
     margin: 0 auto 24px !important;
@@ -1784,7 +1798,7 @@ body {
     padding: 12px 0 !important;
   }
 
-  /* 10. 푸터 */
+  /* 9. 푸터 */
   .footer-content {
     flex-direction: column !important;
     gap: 6px !important;

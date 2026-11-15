@@ -1831,3 +1831,38 @@ body {
     box-sizing: border-box !important;
   }
 }
+
+  /* [⭐️ 리뷰 카드가 배경 밖으로 튀어나가는 현상 완벽 해결] */
+  .review-stack-left,
+  .review-stack-right {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    min-height: unset !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  /* 440px 고정 폭을 스마트폰에 맞게 280px로 축소 */
+  .review-item,
+  .stack-1, .stack-2, .stack-3, .stack-4, .stack-5 {
+    width: 280px !important;
+    max-width: 90vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto 12px auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 스크롤 시 커지는 현상 차단 -> 무조건 90% 축소 크기(scale 0.88)로 화면 안쪽에 고정! */
+  .pop-card.visible,
+  .review-item.pop-card.visible,
+  .stack-1.pop-card.visible,
+  .stack-2.pop-card.visible,
+  .stack-3.pop-card.visible,
+  .stack-4.pop-card.visible,
+  .stack-5.pop-card.visible {
+    transform: scale(0.88) !important; /* 👈 원래 크기보다 90% 축소! */
+  }

@@ -1510,7 +1510,7 @@ body {
   }
   .product-banner-box {
     display: block !important;
-    width: 55% !important; /* 50% 수준으로 축소 */
+    width: 60% !important; /* 50% 수준으로 축소 */
     max-width: 260px !important;
     margin: 0 auto 16px auto !important;
     box-sizing: border-box !important;

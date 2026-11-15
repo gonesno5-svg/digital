@@ -1463,7 +1463,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 95%) {
   /* 1. 가로 스크롤 및 화면 밀림 원천 차단 */
   html, body, .stage-market, .stage-truth {
     overflow-x: hidden !important;

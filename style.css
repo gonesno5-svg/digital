@@ -1445,11 +1445,10 @@ body {
 
 
 
-
 /* ==========================================================
    [모바일 90% 최적화 반응형 최종본]
-   - 팝업창, 리뷰카드, 광고 배너 90% 가변 정렬
-   - 오른쪽 배경 밀림 및 가로 스크롤 100% 차단
+   - 팝업창(.popup-window) 90vw 완벽 축소
+   - 리뷰카드, 광고 배너 90% 가변 정렬
 ========================================================== */
 @media (max-width: 1024px) {
   .truth-content-wrap {
@@ -1463,7 +1462,7 @@ body {
   }
 }
 
-@media (max-width: 95%) {
+@media (max-width: 768px) {
   /* 1. 가로 스크롤 및 화면 밀림 원천 차단 */
   html, body, .stage-market, .stage-truth {
     overflow-x: hidden !important;
@@ -1509,7 +1508,7 @@ body {
   /* 3. 슬라이더 배너 (90%) */
   .slider-section {
     display: block !important;
-    width: 90% !important; /* 슬라이더 90% */
+    width: 90% !important;
     max-width: 440px !important;
     margin: 0 auto 24px auto !important;
     box-sizing: border-box !important;
@@ -1529,28 +1528,28 @@ body {
     line-height: 30px !important;
   }
 
-  /* 4. [⭐️ 핵심 요청] 광고 배너 (90%) */
+  /* 4. 광고 배너 (90%) */
   .ad-section-row {
     display: block !important;
-    width: 90% !important;
+    width: 100% !important;
     margin: 0 0 30px 0 !important;
     box-sizing: border-box !important;
   }
 
   .product-banner-box {
     display: block !important;
-    width: 90% !important; /* 광고 배너 90% */
+    width: 90% !important;
     max-width: 400px !important;
     margin: 0 auto 20px auto !important;
     box-sizing: border-box !important;
   }
 
-  /* 5. [⭐️ 핵심 요청] 리뷰 카드들 (90%) */
+  /* 5. 리뷰 카드들 (90%) */
   .review-stack-left,
   .review-stack-right {
     display: block !important;
-    width: 80% !important; /* 리뷰 스택 90% */
-    max-width: 360px !important;
+    width: 90% !important;
+    max-width: 400px !important;
     min-height: unset !important;
     position: static !important;
     margin: 0 auto 20px auto !important;
@@ -1561,25 +1560,38 @@ body {
     top: unset !important;
     left: unset !important;
     right: unset !important;
-    width: 100% !important; /* 부모 90% 안에서 꽉 참 */
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto 16px auto !important;
     transform: none !important;
     box-sizing: border-box !important;
   }
 
-  /* 6. [⭐️ 핵심 요청] 팝업창 (90%) */
+  /* 6. [⭐️ 핵심 해결!] 팝업창 90% 축소 및 중앙 배치 */
   .popup-container {
     overflow: hidden !important;
-    width: 80% !important;
+    width: 100vw !important;
     pointer-events: none;
   }
 
-  .custom-popup-window {
-    pointer-events: auto;
-    width: 90vw !important; /* 팝업창 90% */
-    max-width: 340px !important;
+  .popup-window {
+    pointer-events: auto !important;
+    width: 90vw !important;      /* 화면의 90% 크기로 강제 축소! */
+    max-width: 90vw !important;
+    left: 5vw !important;       /* 양옆 5%씩 남기고 예쁘게 중앙 정렬 */
     border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .popup-window .popup-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .popup-window .popup-titlebar {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
   }
 
   /* 7. 하단 구매 버튼 */

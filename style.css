@@ -75,6 +75,52 @@ body {
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
 }
 
+/* 상단 스크롤 구매 유도 배너 */
+.scroll-guide-wrap {
+  grid-column: 2 / span 6;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.scroll-guide-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #ff007f 0%, #ff3399 100%);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 0, 127, 0.45);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.scroll-guide-banner strong {
+  color: #fffb00; /* 네온 옐로우 강조 포인트 */
+  text-decoration: underline;
+}
+
+.guide-bounce {
+  display: inline-block;
+  animation: bounceArrow 1.2s infinite ease-in-out;
+  font-size: 16px;
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 6px 20px rgba(255, 0, 127, 0.45); }
+  50% { box-shadow: 0 8px 28px rgba(255, 0, 127, 0.75); }
+}
+
 /* 상단 빅 슬라이더 배너 */
 .slider-section {
   grid-column: 2 / span 6;
